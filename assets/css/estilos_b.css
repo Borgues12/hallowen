@@ -1,0 +1,278 @@
+/* Sección de Confirmación de Registro */
+.registro-confirmado {
+    padding: 60px 0;
+    margin-top: 40px;
+}
+
+/* Box de Confirmación */
+.confirmacion-box {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0, 255, 65, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+    border: 2px solid #00ff41;
+    border-radius: 16px;
+    padding: 40px 20px;
+    margin-bottom: 60px;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.3),
+                inset 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: pulse-border 2s ease-in-out infinite;
+}
+
+@keyframes pulse-border {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(0, 255, 65, 0.3),
+                    inset 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(0, 255, 65, 0.5),
+                    inset 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.checkmark-circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #00ff41 0%, #00cc33 100%);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+    animation: bounce 1s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.checkmark {
+    font-size: 50px;
+    color: #000;
+    font-weight: bold;
+}
+
+.confirmacion-titulo {
+    font-size: 36px;
+    color: #00ff41;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+.confirmacion-texto {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+/* Sección de Información */
+.info-fiesta {
+    margin-top: 40px;
+}
+
+.info-titulo {
+    font-size: 42px;
+    color: #00ff41;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+/* Grid de Actividades */
+.actividades-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.actividades-grid .col-md-4 {
+    margin-bottom: 30px;
+}
+
+/* Tarjeta de Actividad */
+.actividad-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 20, 10, 0.9) 100%);
+    border: 2px solid #00ff41;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.actividad-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.5),
+                0 10px 40px rgba(0, 0, 0, 0.5);
+    border-color: #00ff41;
+}
+
+/* Contenedor de Imagen */
+.imagen-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #000;
+}
+
+.actividad-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.actividad-card:hover .actividad-img {
+    transform: scale(1.1);
+}
+
+.imagen-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    pointer-events: none;
+}
+
+/* Placeholder si no hay imagen */
+.imagen-container:empty::before {
+    content: '📷';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    opacity: 0.3;
+}
+
+/* Contenido de la Actividad */
+.actividad-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.actividad-titulo {
+    font-size: 20px;
+    color: #00ff41;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.actividad-descripcion {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .confirmacion-titulo {
+        font-size: 28px;
+    }
+    
+    .info-titulo {
+        font-size: 32px;
+    }
+    
+    .actividades-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .registro-confirmado {
+        padding: 40px 0;
+    }
+    
+    .confirmacion-box {
+        padding: 30px 15px;
+        margin-bottom: 40px;
+    }
+    
+    .checkmark-circle {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .checkmark {
+        font-size: 35px;
+    }
+    
+    .confirmacion-titulo {
+        font-size: 24px;
+    }
+    
+    .confirmacion-texto {
+        font-size: 16px;
+    }
+    
+    .info-titulo {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    
+    .imagen-container {
+        height: 180px;
+    }
+    
+    .actividad-content {
+        padding: 20px;
+    }
+    
+    .actividad-titulo {
+        font-size: 18px;
+    }
+    
+    .actividad-descripcion {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 575px) {
+    .actividades-grid .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Forzar los tres cuadros en una fila */
+.actividades-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.actividades-grid .col-md-4 {
+    flex: 1;
+    max-width: 350px;
+    margin-bottom: 0;
+}
+
+/* En tablets y móviles sí que se apilen */
+@media (max-width: 991px) {
+    .actividades-grid {
+        flex-wrap: wrap;
+    }
+    
+    .actividades-grid .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+}
