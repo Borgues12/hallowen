@@ -1,3 +1,5 @@
+
+//Todo escrito en el lenguaje de programación JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     
     var x = setInterval(function() {

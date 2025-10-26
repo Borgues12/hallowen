@@ -1,0 +1,43 @@
+/* Overlay minimalista */
+.scary-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.scary-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Calavera riéndose */
+.skull-laugh {
+    font-size: 200px;
+    animation: laugh 0.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 40px #00ff41);
+}
+
+@keyframes laugh {
+    0%, 100% {
+        transform: scale(1) rotate(-5deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .skull-laugh {
+        font-size: 120px;
+    }
+}

@@ -73,8 +73,8 @@ main {
 
 .subscribe-form {
   display: flex;
-  margin-top: 40px;
-  margin-bottom: 60px; }
+  margin-top: 25px;
+  margin-bottom: 10px; }
   .subscribe-form .form-group {
     margin-bottom: 0;
     margin-right: 16px; }
@@ -356,5 +356,38 @@ main {
         height: 50px;
         font-size: 14px;
         padding: 12px 18px;
+    }
+}
+
+/* Forzar que la fila de email y sucursal esté en una nueva línea */
+.subscribe-form .row {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.subscribe-form .row .col-md-6 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.subscribe-form .row .col-md-6:first-child {
+    padding-right: 10px;
+}
+
+.subscribe-form .row .col-md-6:last-child {
+    padding-left: 10px;
+}
+
+/* Responsive: en móviles que se apilen verticalmente */
+@media (max-width: 767px) {
+    .subscribe-form .row .col-md-6 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 20px;
+    }
+    
+    .subscribe-form .row .col-md-6:last-child {
+        margin-bottom: 0;
     }
 }
