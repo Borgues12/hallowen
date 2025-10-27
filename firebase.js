@@ -99,18 +99,21 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Mostrar resultado
         if (resultado.ok) {
-            // PRIMERO iniciar la animación
-            startBugAnimation();
-            
+       
             // LUEGO mostrar mensaje (sin alert que bloquea)
             // Opción 1: Usar un div de mensaje
             const mensaje = document.createElement('div');
+     
             mensaje.textContent = resultado.mensaje;
             mensaje.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#4CAF50;color:white;padding:15px 30px;border-radius:8px;z-index:999999999;font-size:18px;';
             document.body.appendChild(mensaje);
             
             // Quitar mensaje después de 3 segundos
-            setTimeout(() => mensaje.remove(), 3000);
+            setTimeout(() => mensaje.remove(), 5000);
+            //redirigir a la pagina de presentacion
+            window.location.href = `registrado.html?id=${resultado.id}`;
+            startBugAnimation();
+            
             
             // Limpiar formulario después de un delay
             setTimeout(() => {

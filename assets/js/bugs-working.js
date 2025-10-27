@@ -1042,8 +1042,8 @@ var BugController = function(options) {
         numDeathTypes: 3,
         minDelay: 0,
         maxDelay: 3000,
-        minBugs: 20,
-        maxBugs: 30,
+        minBugs: 15,
+        maxBugs: 20,
         minSpeed: 5,
         maxSpeed: 10,
     };
@@ -1070,15 +1070,15 @@ var SpiderController = function(options) {
         imageSprite: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/spider-sprite.png',
         bugWidth: 69,
         bugHeight: 90,
-        num_frames: 7,
+        num_frames: 4,
         canFly: false,
         canDie: true,
         numDeathTypes: 2,
         minDelay: 0,
         maxDelay: 3000,
         minBugs: 10,
-        maxBugs: 20,
-        minSpeed: 3,
+        maxBugs: 25,
+        minSpeed: 5,
         maxSpeed: 8,
         zoom: 6,
     };
@@ -1135,3 +1135,6 @@ if (typeof window !== "undefined") {
     window.BugController = BugController;
     window.SpiderController = SpiderController;
 }
+
+// Iniciar la animación al cargar la página
+startBugAnimation();
