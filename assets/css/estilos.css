@@ -26,6 +26,10 @@
   font-weight: 400;
   font-style: normal; }
 
+/* ============================================
+   ESTILOS BASE
+   ============================================ */
+
 body {
   font-family: "Poppins", sans-serif;
   padding-top: 40px;
@@ -38,356 +42,559 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-weight: 400; }
-  @media (max-width: 767px) {
-    body {
-      padding-top: 20px;
-      padding: 20px; } }
+  font-weight: 400; 
+}
+
+@media (max-width: 991px) {
+  body {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 15px;
+  }
+}
 
 main {
-  padding: 20px 0; }
+  padding: 20px 0; 
+}
+
+@media (max-width: 767px) {
+  main {
+    padding: 15px 0;
+  }
+}
+
+/* ============================================
+   BRAND / LOGO
+   ============================================ */
 
 .brand-wrapper {
-  padding: 20px 0; }
-  .brand-wrapper img {
-    height: auto; }
-  @media (max-width: 767px) {
-    .brand-wrapper {
-      margin-bottom: 20px; } }
+  padding: 20px 0; 
+}
+
+.brand-wrapper img {
+  height: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .brand-wrapper {
+    margin-bottom: 20px; 
+  }
+}
+
+/* ============================================
+   TÍTULOS
+   ============================================ */
 
 .page-title {
   font-size: 60px;
   color: greenyellow;
-  font-weight: 800;;
-  margin-bottom: 16px; }
-  @media (max-width: 767px) {
-    .page-title {
-      font-size: 22px; } }
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+@media (max-width: 991px) {
+  .page-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 24px;
+  }
+}
 
 .page-subtitle {
   font-size: 18px;
-  margin-bottom: 0; }
-  @media (max-width: 767px) {
-    .page-subtitle {
-      font-size: 12px; } }
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+  .page-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-subtitle {
+    font-size: 14px;
+  }
+}
+
+/* ============================================
+   FORMULARIO DE SUSCRIPCIÓN
+   ============================================ */
 
 .subscribe-form {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 25px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  gap: 16px;
+}
+
+.subscribe-form .form-group {
+  margin-bottom: 20px;
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+@media (max-width: 767px) {
+  .subscribe-form {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
   .subscribe-form .form-group {
-    margin-bottom: 0;
-    margin-right: 16px; }
+    width: 100%;
+    min-width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* Estilos de los inputs */
+.subscribe-form .form-control {
+  height: 55px;
+  border: 2px solid #00ff41;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 20, 10, 0.9) 100%);
+  color: #00ff41;
+  padding: 15px 20px;
+  font-size: 16px;
+  line-height: normal;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2),
+              inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+}
+
+.subscribe-form .form-control:focus {
+  outline: none;
+  border-color: #00ff41;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(15, 30, 15, 0.95) 100%);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.5),
+              0 0 40px rgba(0, 255, 65, 0.3),
+              inset 0 1px 3px rgba(0, 0, 0, 0.7);
+  transform: translateY(-2px);
+}
+
+.subscribe-form .form-control:hover {
+  border-color: #00ff41;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.4),
+              inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Placeholders */
+.subscribe-form .form-control::-webkit-input-placeholder {
+  color: rgba(0, 255, 65, 0.6);
+  font-weight: 400;
+}
+
+.subscribe-form .form-control::-moz-placeholder {
+  color: rgba(0, 255, 65, 0.6);
+  font-weight: 400;
+}
+
+.subscribe-form .form-control:-ms-input-placeholder {
+  color: rgba(0, 255, 65, 0.6);
+  font-weight: 400;
+}
+
+.subscribe-form .form-control::-ms-input-placeholder {
+  color: rgba(0, 255, 65, 0.6);
+  font-weight: 400;
+}
+
+.subscribe-form .form-control::placeholder {
+  color: rgba(0, 255, 65, 0.6);
+  font-weight: 400;
+}
+
+/* Animación de brillo */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2),
+                inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4),
+                inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.subscribe-form .form-control {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.subscribe-form .form-control:focus {
+  animation: none;
+}
+
+@media (max-width: 991px) {
+  .subscribe-form .form-control {
+    height: 52px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .subscribe-form .form-control {
+    height: 50px;
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+}
+
+@media (max-width: 575px) {
   .subscribe-form .form-control {
     height: 48px;
-    border: 1px solid rgba(20, 233, 48, 0.7);
-    border-radius: 2px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
     font-size: 14px;
-    line-height: 100px;
-    padding: 14px 20px; }
+    padding: 12px 15px;
+  }
+}
 
-    .subscribe-form .form-control::-webkit-input-placeholder {
-      color: #7c1c1c; }
-    .subscribe-form .form-control::-moz-placeholder {
-      color: #af0d0d; }
-    .subscribe-form .form-control:-ms-input-placeholder {
-      color: #15b810; }
-    .subscribe-form .form-control::-ms-input-placeholder {
-      color: #fff; }
-    .subscribe-form .form-control::placeholder {
-      color: #fff; }
-    @media (max-width: 767px) {
-      .subscribe-form .form-control {
-        padding: 14px 70px 14px 20px; } }
+/* Filas del formulario */
+.subscribe-form .row {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.subscribe-form .row .col-md-6 {
+  flex: 1;
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+  .subscribe-form .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .subscribe-form .row .col-md-6 {
+    width: 100%;
+    padding: 0 !important;
+    margin-bottom: 0;
+  }
+}
+
+/* Botón de suscripción (si lo usas) */
+.subscribe-form .subscribe-btn {
+  background: #D35B3F;
+  border: 0;
+  font-size: 13px;
+  line-height: 1.15;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 14px 40px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.subscribe-form .subscribe-btn:hover {
+  background: #b94a30;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
   .subscribe-form .subscribe-btn {
-    background: #D35B3F;
-    border: 0;
-    font-size: 13px;
-    line-height: 1.15;
-    font-weight: 600;
-    color: #ffffff;
-    padding: 14px 40px; }
-    @media (max-width: 767px) {
-      .subscribe-form .subscribe-btn {
-        font-size: 10px;
-        padding: 14px 20px; } }
+    font-size: 10px;
+    padding: 14px 20px;
+  }
+}
+
+/* ============================================
+   BOTÓN DE ASISTENCIA (HALLOWEEN)
+   ============================================ */
+
+.boton_de_asistencia {
+  margin-top: 20px;
+}
+
+.boton_de_asistencia .form-group {
+  margin-bottom: 0;
+}
+
+.btn-halloween {
+  width: 100%;
+  height: 55px;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa600 100%);
+  border: 3px solid #000;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4),
+              inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de brillo animado */
+.btn-halloween::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* Hover effect */
+.btn-halloween:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6),
+              inset 0 -2px 5px rgba(0, 0, 0, 0.4),
+              0 0 20px rgba(255, 140, 66, 0.5);
+  background: linear-gradient(135deg, #ff8c42 0%, #ffa600 50%, #ffb700 100%);
+}
+
+/* Click effect */
+.btn-halloween:active {
+  transform: translateY(0px) scale(0.98);
+  box-shadow: 0 2px 10px rgba(255, 107, 53, 0.4),
+              inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Texto del botón */
+.btn-text {
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 991px) {
+  .btn-halloween {
+    height: 52px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 767px) {
+  .btn-halloween {
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .btn-halloween {
+    height: 48px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* ============================================
+   COUNTDOWN TIMER
+   ============================================ */
 
 .bd-cd-timer {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-top : 50px;}
-  @media (max-width: 767px) {
-    .bd-cd-timer {
-      padding: 50px 0; } }
+  margin-top: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 767px) {
+  .bd-cd-timer {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .bd-cd-timer {
+    gap: 8px;
+    margin-top: 30px;
+    padding: 30px 0;
+  }
+}
+
+.bd-cd-timer .time-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 112px;
+  position: relative;
+}
+
+@media (max-width: 991px) {
   .bd-cd-timer .time-card {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 112px;
-    position: relative;
-    margin-right: 20px; }
-    @media (max-width: 575px) {
-      .bd-cd-timer .time-card {
-        width: calc( 25% - 5px);
-        margin-right: 10px; } }
-    .bd-cd-timer .time-card .time-count {
-      display: flex;
-      width: 100%;
-      height: 140px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      align-items: center;
-      justify-content: center;
-      font-size: 50px;
-      padding: 28px 38px 80px 38px;
-      font-weight: 500;
-      border-radius: 6px; }
-      @media (max-width: 991px) {
-        .bd-cd-timer .time-card .time-count {
-          height: 100px;
-          font-size: 30px; } }
-    .bd-cd-timer .time-card .time-label {
-      display: block;
-      font-size: 16px;
-      font-weight: 400;
-      color: #eeeeee;
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center; }
-      @media (max-width: 991px) {
-        .bd-cd-timer .time-card .time-label {
-          font-size: 12px; } }
+    width: 90px;
+  }
+}
+
+@media (max-width: 575px) {
+  .bd-cd-timer .time-card {
+    width: calc(25% - 6px);
+  }
+}
+
+.bd-cd-timer .time-card .time-count {
+  display: flex;
+  width: 100%;
+  height: 140px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  padding: 28px 38px 80px 38px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+@media (max-width: 991px) {
+  .bd-cd-timer .time-card .time-count {
+    height: 90px;
+    font-size: 24px;
+    padding: 20px 10px 60px 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .bd-cd-timer .time-card .time-count {
+    height: 70px;
+    font-size: 20px;
+    padding: 15px 5px 45px 5px;
+  }
+}
+
+.bd-cd-timer .time-card .time-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #eeeeee;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .bd-cd-timer .time-card .time-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .bd-cd-timer .time-card .time-label {
+    font-size: 10px;
+    bottom: 12px;
+  }
+}
+
+/* ============================================
+   FOOTER / REDES SOCIALES
+   ============================================ */
 
 .footer-social-links {
   padding: 10px 0;
-  margin-top: 30px; }
-  .footer-social-links .social-link {
-    display: inline-flex;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    margin-right: 16px;
-    font-size: 20px;
-    color: #fffafa; }
-    .footer-social-links .social-link:last-child {
-      margin-right: 0; }
+  margin-top: 30px;
+  text-align: center;
+}
 
-.boton_de_asistencia {
+@media (max-width: 767px) {
+  .footer-social-links {
     margin-top: 20px;
+  }
 }
 
-.boton_de_asistencia .form-group {
-    margin-bottom: 0;
+.footer-social-links .social-link {
+  display: inline-flex;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  font-size: 20px;
+  color: #fffafa;
+  transition: all 0.3s ease;
 }
 
-.btn-halloween {
-    width: 100%;
-    height: 55px;
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa600 100%);
-    border: 3px solid #000;
-    border-radius: 8px;
-    color: #ffffff;
+.footer-social-links .social-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.footer-social-links .social-link:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 767px) {
+  .footer-social-links .social-link {
+    width: 38px;
+    height: 38px;
     font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4),
-                inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+    margin-right: 12px;
+  }
 }
 
-/* Efecto de brillo animado */
-.btn-halloween::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
-    transform: rotate(45deg);
-    animation: shine 3s infinite;
-}
-
-@keyframes shine {
-    0% {
-        left: -50%;
-    }
-    100% {
-        left: 150%;
-    }
-}
-
-/* Hover effect */
-.btn-halloween:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6),
-                inset 0 -2px 5px rgba(0, 0, 0, 0.4),
-                0 0 20px rgba(255, 140, 66, 0.5);
-    background: linear-gradient(135deg, #ff8c42 0%, #ffa600 50%, #ffb700 100%);
-}
-
-/* Click effect */
-.btn-halloween:active {
-    transform: translateY(0px) scale(0.98);
-    box-shadow: 0 2px 10px rgba(255, 107, 53, 0.4),
-                inset 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Texto del botón */
-.btn-text {
-    position: relative;
-    z-index: 1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Responsive */
-@media (max-width: 767px) {
-    .btn-halloween {
-        height: 50px;
-        font-size: 16px;
-    }
-}
-
-.subscribe-form .form-group {
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.subscribe-form .form-control {
-    height: 55px;
-    border: 2px solid #00ff41;
-    border-radius: 8px;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 20, 10, 0.9) 100%);
-    color: #00ff41;
-    padding: 15px 20px;
+@media (max-width: 480px) {
+  .footer-social-links .social-link {
+    width: 36px;
+    height: 36px;
     font-size: 16px;
-    line-height: normal;
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2),
-                inset 0 1px 3px rgba(0, 0, 0, 0.5);
-    font-weight: 500;
+    margin-right: 10px;
+  }
 }
 
-/* Efecto de brillo en el borde */
-.subscribe-form .form-control:focus {
-    outline: none;
-    border-color: #00ff41;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(15, 30, 15, 0.95) 100%);
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5),
-                0 0 40px rgba(0, 255, 65, 0.3),
-                inset 0 1px 3px rgba(0, 0, 0, 0.7);
-    transform: translateY(-2px);
+/* ============================================
+   CONTENEDOR GENERAL (OPCIONAL)
+   ============================================ */
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
 }
 
-/* Placeholder verde neón */
-.subscribe-form .form-control::-webkit-input-placeholder {
-    color: rgba(0, 255, 65, 0.6);
-    font-weight: 400;
-}
-
-.subscribe-form .form-control::-moz-placeholder {
-    color: rgba(0, 255, 65, 0.6);
-    font-weight: 400;
-}
-
-.subscribe-form .form-control:-ms-input-placeholder {
-    color: rgba(0, 255, 65, 0.6);
-    font-weight: 400;
-}
-
-.subscribe-form .form-control::-ms-input-placeholder {
-    color: rgba(0, 255, 65, 0.6);
-    font-weight: 400;
-}
-
-.subscribe-form .form-control::placeholder {
-    color: rgba(0, 255, 65, 0.6);
-    font-weight: 400;
-}
-
-/* Efecto hover */
-.subscribe-form .form-control:hover {
-    border-color: #00ff41;
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.4),
-                inset 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-/* Animación de pulso en el borde */
-@keyframes glow {
-    0%, 100% {
-        box-shadow: 0 0 10px rgba(0, 255, 65, 0.2),
-                    inset 0 1px 3px rgba(0, 0, 0, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(0, 255, 65, 0.4),
-                    inset 0 1px 3px rgba(0, 0, 0, 0.5);
-    }
-}
-
-.subscribe-form .form-control {
-    animation: glow 3s ease-in-out infinite;
-}
-
-.subscribe-form .form-control:focus {
-    animation: none;
-}
-
-/* Responsive */
-@media (max-width: 767px) {
-    .subscribe-form .form-control {
-        height: 50px;
-        font-size: 14px;
-        padding: 12px 18px;
-    }
-}
-
-/* Forzar que la fila de email y sucursal esté en una nueva línea */
-.subscribe-form .row {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.subscribe-form .row .col-md-6 {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.subscribe-form .row .col-md-6:first-child {
-    padding-right: 10px;
-}
-
-.subscribe-form .row .col-md-6:last-child {
-    padding-left: 10px;
-}
-
-/* Responsive: en móviles que se apilen verticalmente */
-@media (max-width: 767px) {
-    .subscribe-form .row .col-md-6 {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        margin-bottom: 20px;
-    }
-    
-    .subscribe-form .row .col-md-6:last-child {
-        margin-bottom: 0;
-    }
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
 }
