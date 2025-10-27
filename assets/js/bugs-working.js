@@ -1136,5 +1136,23 @@ if (typeof window !== "undefined") {
     window.SpiderController = SpiderController;
 }
 
-// Iniciar la animación al cargar la página
-startBugAnimation();
+if (typeof window !== "undefined") {
+    // Verificar múltiples estados de carga del documento
+    if (document.readyState === 'loading') {
+        // El documento aún se está cargando
+        document.addEventListener('DOMContentLoaded', startBugAnimation);
+    } else if (document.readyState === 'interactive' || document.readyState === 'complete') {
+        // El documento ya está listo (puede ocurrir si el script se carga tarde)
+        // Usar setTimeout para asegurar que el navegador haya terminado de renderizar
+        setTimeout(startBugAnimation, 100);
+    }
+    
+    // Backup: También iniciar cuando la ventana esté completamente cargada
+    window.addEventListener('load', function() {
+        // Solo reiniciar si no se han creado instancias
+        if (!bugControllerInstance && !spiderControllerInstance) {
+            console.log('🔄 Iniciando animación en window.load como respaldo');
+            startBugAnimation();
+        }
+    });
+}   
