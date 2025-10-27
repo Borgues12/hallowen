@@ -100,22 +100,22 @@ document.addEventListener('DOMContentLoaded', function() {
         // Mostrar resultado
         if (resultado.ok) {
        
-            // LUEGO mostrar mensaje (sin alert que bloquea)
+          
+            //redirigir a la pagina de presentacion
+            window.location.href = `registrado.html?id=${resultado.id}`;
+          
+        } else {
+            alert(resultado.mensaje);
             // Opción 1: Usar un div de mensaje
             const mensaje = document.createElement('div');
      
             mensaje.textContent = resultado.mensaje;
-            mensaje.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#4CAF50;color:white;padding:15px 30px;border-radius:8px;z-index:999999999;font-size:18px;';
+            mensaje.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:red;color:white;padding:15px 30px;border-radius:8px;z-index:999999999;font-size:18px;';
             document.body.appendChild(mensaje);
             
             // Quitar mensaje después de 3 segundos
             setTimeout(() => mensaje.remove(), 5000);
-            //redirigir a la pagina de presentacion
-            window.location.href = `registrado.html?id=${resultado.id}`;
-            startBugAnimation();
-            
-            
-            // Limpiar formulario después de un delay
+              // Limpiar formulario después de un delay
             setTimeout(() => {
                 document.getElementById('nombre').value = '';
                 document.getElementById('apellido').value = '';
@@ -123,9 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('email').value = '';
                 document.getElementById('sucursal').value = '';
             }, 500);
-            
-        } else {
-            alert(resultado.mensaje);
         }
       } catch (error) {
           console.error("Error inesperado:", error);
