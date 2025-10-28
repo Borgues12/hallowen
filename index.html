@@ -36,8 +36,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h1 class="page-title">Nos vemos pronto...</h1>
-                    <p class="page-subtitle">Te invitamos a nuestra fiesta de Halloween</p>
+                    <h1 class="page-title">Invitación fiesta de Halloween</h1>
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+                        <p class="page-subtitle" style="margin: 0; flex: 1; min-width: 200px; font-size: 1.1em; color: #ff8c00;">
+                            Te invitamos a nuestra fiesta de Halloween
+                        </p>
+                        
+                        <p class="page-description" style="margin: 0; flex: 1; min-width: 280px; font-size: 1.5em; font-weight: bold; color: #ffd700; text-shadow: 0 0 15px #ffd700, 0 0 25px #ff8c00; padding: 12px 20px; border: 3px solid #ffd700; border-radius: 10px; background: rgba(255, 215, 0, 0.1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); animation: pulse-glow 2s infinite; text-align: center;">
+                            🎃 GRAN PREMIO AL MEJOR DISFRAZ 🎃
+                        </p>
+                        
+                    </div>
+
+                    <style>
+                        @keyframes pulse-glow {
+                            0%, 100% {
+                                transform: scale(1);
+                                box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+                            }
+                            50% {
+                                transform: scale(1.03);
+                                box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+                            }
+                        }
+                    </style>
                    <form class="subscribe-form">
                         <div class="form-group">
                             <input type="text" name="nombre" id="nombre" class="form-control"
@@ -61,7 +83,7 @@
                             <select name="sucursal" id="sucursal" class="form-control" required >
                                 <option value="" disabled selected>Selecciona tu sucursal</option>
                                 <option value="Quito">Shyris</option>
-                                <option value="Guayaquil">El Coca</option>
+                                <option value="Guayaquil">Michelena</option>
                                 <option value="Cuenca">Praderas</option>
                                 <option value="Ambato">Calderón</option>
                             </select>
@@ -70,7 +92,7 @@
                     <form class="boton_de_asistencia">
                         <div class="form-group">
                           <button type="submit" class="btn-halloween">
-                             <span class="btn-text">🎃 Registro 🎃</span>
+                             <span class="btn-text">¡Únete a la Fiesta! 🎉</span>
                             </button>
                         </div>
                     </form>
@@ -78,6 +100,7 @@
                         <div class="form-group">
                             <div class="db flex flex-column align-items-center">
                                 <div id="timer" class="bd-cd-timer">
+                                <h1 class="page-title">Nos vemos pronto...</h1>
                                     <div class="time-card">
                                         <span class="time-count" id="days">0</span>
                                         <span class="time-label">DAYS</span>
